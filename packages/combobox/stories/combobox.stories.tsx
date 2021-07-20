@@ -324,3 +324,32 @@ export const ModalWindow = () => {
     </Modal>
   )
 }
+
+export const AsyncResize = () => {
+  const [height, setHeight] = React.useState("15px")
+
+  React.useEffect(() => {
+    setTimeout(() => setHeight("100px"), 1000)
+  }, [])
+
+  return (
+    <>
+      <div style={{ display: "flex", alignItems: "center", height }}>space</div>
+      <ComboBox
+        options={[
+          { name: "test1", value: 1 },
+          { name: "test2", value: 2 },
+          { name: "test3", value: 3 },
+          { name: "test4", value: 4 },
+          { name: "test5", value: 5 },
+          { name: "test6", value: 6 },
+          { name: "test7", value: 7 },
+          { name: "test8", value: 8 },
+          { name: "test9", value: 9 },
+        ]}
+        style={{ width: "200px" }}
+        onSelectionChange={(name, value) => console.log(value)}
+      />
+    </>
+  )
+}
