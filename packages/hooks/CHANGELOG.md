@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.7](https://github.com/Jepria/jfront-ui/compare/@jfront/ui-hooks@0.7.6...@jfront/ui-hooks@0.7.7) (2021-07-20)
+
+
+### Bug Fixes
+
+* use effects hooks fixed ([c0e129f](https://github.com/Jepria/jfront-ui/commit/c0e129f2df2d5b1bf921208aa27ef595e1996227))
+
+
+
+
+
 ## [0.7.6](https://github.com/Jepria/jfront-ui/compare/@jfront/ui-hooks@0.7.5...@jfront/ui-hooks@0.7.6) (2021-07-12)
 
 **Note:** Version bump only for package @jfront/ui-hooks

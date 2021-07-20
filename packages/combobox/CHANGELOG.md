@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/Jepria/jfront-ui/compare/@jfront/ui-combobox@0.7.0...@jfront/ui-combobox@0.7.1) (2021-07-20)
+
+
+### Bug Fixes
+
+* onBlur ([acb229d](https://github.com/Jepria/jfront-ui/commit/acb229ddc90fd7d99868f47e1cd07f6d493815cf))
+* popup changing coords on on open ([2f614da](https://github.com/Jepria/jfront-ui/commit/2f614da22c6ec6b2e2931c007255f20118b8ea51))
+
+
+
+
+
 # [0.7.0](https://github.com/Jepria/jfront-ui/compare/@jfront/ui-combobox@0.6.5...@jfront/ui-combobox@0.7.0) (2021-07-12)
 
 
