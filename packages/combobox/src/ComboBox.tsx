@@ -1,11 +1,4 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  MutableRefObject,
-  useMemo,
-  RefObject,
-} from "react"
+import React, { useState, useRef, useEffect, useMemo, RefObject } from "react"
 import { LoadingImage, ExclamationImage } from "@jfront/ui-icons"
 import { ComboBoxButton } from "./ComboBoxButton"
 import { Popup } from "@jfront/ui-popup"
@@ -276,16 +269,6 @@ export const ComboBox = React.forwardRef<HTMLDivElement, ComboBoxProps>(
 
     const onBlur = (e: React.FocusEvent) => {
       if (props.onBlur) props.onBlur(e)
-      if (filter.trim().length === 0 && onSelectionChange) {
-        onSelectionChange(name)
-      }
-      if (!currentOption) {
-        return
-      }
-      const label = getName(currentOption)
-      if (filter !== label) {
-        setFilter(label)
-      }
     }
 
     return (
@@ -351,6 +334,16 @@ export const ComboBox = React.forwardRef<HTMLDivElement, ComboBoxProps>(
           onClose={() => {
             setIsOpen(false)
             setFocused(false)
+            if (filter.trim().length === 0 && onSelectionChange) {
+              onSelectionChange(name)
+            }
+            if (!currentOption) {
+              return
+            }
+            const label = getName(currentOption)
+            if (filter !== label) {
+              setFilter(label)
+            }
           }}
         >
           {render()}
