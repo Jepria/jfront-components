@@ -1,11 +1,4 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  MutableRefObject,
-  useMemo,
-  RefObject,
-} from "react"
+import React, { useState, useRef, useEffect, useMemo, RefObject } from "react"
 import { LoadingImage, ExclamationImage } from "@jfront/ui-icons"
 import { ComboBoxButton } from "./ComboBoxButton"
 import { Popup } from "@jfront/ui-popup"
@@ -41,7 +34,7 @@ export interface ComboBoxProps {
   onFocus?: (event: React.FocusEvent) => void
   onBlur?: (event: React.FocusEvent) => void
   onInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  onSelectionChange?: (name: string, value: any, option?: any) => void
+  onSelectionChange?: (name: string, value?: any, option?: any) => void
 }
 
 const ARROW_UP = 38
@@ -170,7 +163,7 @@ export const ComboBox = React.forwardRef<HTMLDivElement, ComboBoxProps>(
         setFilter(getName(optionsMap.get(value)))
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [value, optionsMap])
+    }, [value])
 
     const onChangeValue = (label: string, newValue: any) => {
       if (newValue !== value) {
@@ -276,23 +269,6 @@ export const ComboBox = React.forwardRef<HTMLDivElement, ComboBoxProps>(
 
     const onBlur = (e: React.FocusEvent) => {
       if (props.onBlur) props.onBlur(e)
-      const label = getName(currentOption)
-      if (value && filter !== label) {
-        setFilter(label)
-        if (onInputChange && inputRef?.current) {
-          Object.getOwnPropertyDescriptor(
-            window.HTMLInputElement.prototype,
-            "value",
-          )?.set?.call(
-            (inputRef as MutableRefObject<HTMLInputElement>).current,
-            label,
-          )
-          const event = new Event("change", { bubbles: true })
-          ;(inputRef as MutableRefObject<HTMLInputElement>).current.dispatchEvent(
-            event,
-          )
-        }
-      }
     }
 
     return (
@@ -358,6 +334,16 @@ export const ComboBox = React.forwardRef<HTMLDivElement, ComboBoxProps>(
           onClose={() => {
             setIsOpen(false)
             setFocused(false)
+            if (filter.trim().length === 0 && onSelectionChange) {
+              onSelectionChange(name)
+            }
+            if (!currentOption) {
+              return
+            }
+            const label = getName(currentOption)
+            if (filter !== label) {
+              setFilter(label)
+            }
           }}
         >
           {render()}

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/Jepria/jfront-ui/compare/@jfront/ui-popup@0.3.0...@jfront/ui-popup@0.3.1) (2021-07-20)
+
+
+### Bug Fixes
+
+* popup changing coords on on open ([2f614da](https://github.com/Jepria/jfront-ui/commit/2f614da22c6ec6b2e2931c007255f20118b8ea51))
+
+
+
+
+
 # [0.3.0](https://github.com/Jepria/jfront-ui/compare/@jfront/ui-popup@0.2.11...@jfront/ui-popup@0.3.0) (2021-07-12)
 
 

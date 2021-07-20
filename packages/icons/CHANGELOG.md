@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.13](https://github.com/Jepria/jfront-ui/compare/@jfront/ui-icons@0.6.12...@jfront/ui-icons@0.6.13) (2021-07-20)
+
+**Note:** Version bump only for package @jfront/ui-icons
+
+
+
+
+
 ## [0.6.12](https://github.com/Jepria/jfront-ui/compare/@jfront/ui-icons@0.6.11...@jfront/ui-icons@0.6.12) (2021-07-12)
 
 **Note:** Version bump only for package @jfront/ui-icons

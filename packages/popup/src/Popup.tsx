@@ -219,6 +219,11 @@ export const Popup = forwardRef<PopupProps, "div">(
 
     const open = () => {
       if (!isOpen) {
+        setElementPosition({
+          x: targetElementRef?.current?.getBoundingClientRect().left,
+          y: targetElementRef?.current?.getBoundingClientRect().top,
+        })
+        setPosition(evaluatePosition())
         setOpen(true)
       }
       if (onOpen) {
